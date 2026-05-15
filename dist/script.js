@@ -1,19 +1,13 @@
-const menuToggle = document.querySelector(".menu-toggle");
+﻿const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 menuToggle?.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("is-open");
-  menuToggle.classList.toggle("is-open", isOpen);
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+  navLinks.classList.toggle("is-open");
 });
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("is-open");
-    menuToggle?.classList.remove("is-open");
-    menuToggle?.setAttribute("aria-expanded", "false");
-    menuToggle?.setAttribute("aria-label", "Открыть меню");
   });
 });
 
@@ -35,8 +29,8 @@ const revealItem = (item) => {
 
 document.querySelectorAll(".profile-card, .card, .work, .steps-line div, .review-card").forEach(revealItem);
 
-const SUPABASE_URL = "__SUPABASE_URL__";
-const SUPABASE_ANON_KEY = "__SUPABASE_ANON_KEY__";
+const SUPABASE_URL = "https://example.supabase.co";
+const SUPABASE_ANON_KEY = "test_anon_key";
 const SUPABASE_REVIEWS_TABLE = "reviews";
 const REVIEW_TIMEOUT_MS = 15 * 60 * 1000;
 const REVIEW_TIMER_KEY = "mika-review-last-submit";
@@ -188,3 +182,4 @@ reviewForm?.addEventListener("submit", async (event) => {
     submitButton.disabled = false;
   }
 });
+
