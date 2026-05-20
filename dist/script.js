@@ -1,13 +1,19 @@
-﻿const menuToggle = document.querySelector(".menu-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 menuToggle?.addEventListener("click", () => {
-  navLinks.classList.toggle("is-open");
+  const isOpen = navLinks.classList.toggle("is-open");
+  menuToggle.classList.toggle("is-open", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
 });
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("is-open");
+    menuToggle?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.setAttribute("aria-label", "Открыть меню");
   });
 });
 
@@ -27,10 +33,142 @@ const revealItem = (item) => {
   observer.observe(item);
 };
 
-document.querySelectorAll(".profile-card, .card, .work, .steps-line div, .review-card").forEach(revealItem);
+document.querySelectorAll(".profile-card, .card, .work, .gallery-card, .steps-line div, .review-card").forEach(revealItem);
 
-const SUPABASE_URL = "https://example.supabase.co";
-const SUPABASE_ANON_KEY = "test_anon_key";
+const filterButtons = [...document.querySelectorAll(".filter-button")];
+const galleryCards = [...document.querySelectorAll(".gallery-card")];
+const galleryVideos = [...document.querySelectorAll(".gallery-media video")];
+
+galleryVideos.forEach((video) => {
+  video.playbackRate = 0.75;
+});
+
+const projectModals = [...document.querySelectorAll(".project-modal")];
+const projectModalOpeners = [...document.querySelectorAll("[data-project-modal-open]")];
+const projectModalClosers = [...document.querySelectorAll("[data-project-modal-close]")];
+const imageViewer = document.querySelector("#image-viewer");
+const imageViewerImage = imageViewer?.querySelector("img");
+const imageViewerClosers = [...document.querySelectorAll("[data-image-viewer-close]")];
+const imageZoomButtons = [...document.querySelectorAll("[data-image-zoom]")];
+let imageZoom = 1;
+const IMAGE_VIEWER_BASE_ZOOM = 0.88;
+
+const setProjectModal = (modal, isOpen) => {
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.toggle("is-open", isOpen);
+  modal.setAttribute("aria-hidden", String(!isOpen));
+  document.body.classList.toggle("modal-open", isOpen || Boolean(imageViewer?.classList.contains("is-open")));
+
+  modal.querySelectorAll("video").forEach((video) => {
+    video.playbackRate = 0.75;
+    if (isOpen) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+};
+
+const closeProjectModals = () => {
+  projectModals.forEach((modal) => setProjectModal(modal, false));
+};
+
+const setImageZoom = (zoom) => {
+  imageZoom = Math.min(3, Math.max(IMAGE_VIEWER_BASE_ZOOM, zoom));
+
+  if (imageViewerImage) {
+    imageViewerImage.style.setProperty("--zoom", String(imageZoom));
+    imageViewerImage.classList.toggle("is-zoomed", imageZoom > 1);
+  }
+};
+
+const setImageViewer = (isOpen, image = null) => {
+  if (!imageViewer || !imageViewerImage) {
+    return;
+  }
+
+  if (image) {
+    imageViewerImage.src = image.src;
+    imageViewerImage.alt = image.alt;
+    setImageZoom(IMAGE_VIEWER_BASE_ZOOM);
+  }
+
+  imageViewer.classList.toggle("is-open", isOpen);
+  imageViewer.setAttribute("aria-hidden", String(!isOpen));
+  document.body.classList.toggle(
+    "modal-open",
+    isOpen || projectModals.some((modal) => modal.classList.contains("is-open"))
+  );
+
+  if (!isOpen) {
+    imageViewerImage.removeAttribute("src");
+    setImageZoom(IMAGE_VIEWER_BASE_ZOOM);
+  }
+};
+
+projectModalOpeners.forEach((opener) => {
+  opener.addEventListener("click", () => setProjectModal(document.querySelector(`#${opener.dataset.projectModalOpen}`), true));
+  opener.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setProjectModal(document.querySelector(`#${opener.dataset.projectModalOpen}`), true);
+    }
+  });
+});
+
+projectModalClosers.forEach((closer) => {
+  closer.addEventListener("click", closeProjectModals);
+});
+
+document.querySelectorAll("[data-lightbox-image]").forEach((image) => {
+  image.addEventListener("click", () => setImageViewer(true, image));
+});
+
+imageViewerImage?.addEventListener("click", () => {
+  setImageZoom(imageZoom > 1 ? IMAGE_VIEWER_BASE_ZOOM : 2);
+});
+
+imageZoomButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setImageZoom(imageZoom + (button.dataset.imageZoom === "in" ? 0.5 : -0.5));
+  });
+});
+
+imageViewerClosers.forEach((closer) => {
+  closer.addEventListener("click", () => setImageViewer(false));
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && imageViewer?.classList.contains("is-open")) {
+    setImageViewer(false);
+    return;
+  }
+
+  if (event.key === "Escape" && projectModals.some((modal) => modal.classList.contains("is-open"))) {
+    closeProjectModals();
+  }
+});
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter || "all";
+
+    filterButtons.forEach((item) => {
+      item.classList.toggle("is-active", item === button);
+    });
+
+    galleryCards.forEach((card) => {
+      const shouldShow = filter === "all" || card.dataset.category === filter;
+      card.classList.toggle("is-hidden", !shouldShow);
+    });
+  });
+});
+
+const SUPABASE_URL = "__SUPABASE_URL__";
+const SUPABASE_ANON_KEY = "__SUPABASE_ANON_KEY__";
 const SUPABASE_REVIEWS_TABLE = "reviews";
 const REVIEW_TIMEOUT_MS = 15 * 60 * 1000;
 const REVIEW_TIMER_KEY = "mika-review-last-submit";
@@ -182,4 +320,3 @@ reviewForm?.addEventListener("submit", async (event) => {
     submitButton.disabled = false;
   }
 });
-

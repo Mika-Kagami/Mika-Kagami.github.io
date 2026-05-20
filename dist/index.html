@@ -11,7 +11,11 @@
   <main class="shell">
     <header class="navbar">
       <a class="logo" href="#">みか かがみ</a>
-      <button class="menu-toggle" type="button" aria-label="Открыть меню">☰</button>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="nav-links">
         <a href="#services">Услуги</a>
         <a href="#portfolio">Портфолио</a>
@@ -32,7 +36,7 @@
           <a class="button ghost" href="#portfolio">Смотреть работы</a>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
+      <div class="hero-art" data-profile="Mika Kagami" data-profile-note="design / code / launch" aria-hidden="true">
         <div class="profile-card">
           <div class="profile-aura"></div>
           <div class="orbit orbit-one"></div>
@@ -107,10 +111,10 @@
         <a href="#contact">Смотреть все работы →</a>
       </div>
       <div class="portfolio-grid">
-        <article class="work work-1"><h3>The Brand</h3><p>Корпоративный сайт</p></article>
-        <article class="work work-2"><h3>Coffee House</h3><p>Сайт для кофейни</p></article>
-        <article class="work work-3"><h3>Travel More</h3><p>Сайт для турагентства</p></article>
-        <article class="work work-4"><h3>Studio</h3><p>Сайт для дизайн-студии</p></article>
+        <a class="work work-1" href="portfolio-websites.html"><h3>Веб-сайты</h3><p>Library</p></a>
+        <a class="work work-2" href="portfolio-ad-templates.html"><h3>Рекламные шаблоны</h3><p>Library</p></a>
+        <a class="work work-3" href="portfolio-3d-room-design.html"><h3>3D Room Design</h3><p>Gallery</p></a>
+        <a class="work work-4" href="portfolio-house-design.html"><h3>Дизайн домов</h3><p>Library</p></a>
       </div>
     </section>
 
