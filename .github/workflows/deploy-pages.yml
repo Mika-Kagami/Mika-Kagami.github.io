@@ -32,7 +32,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p dist
-          cp index.html styles.css script.js dist/
+          cp index.html portfolio-*.html styles.css script.js dist/
           cp -R assets dist/assets
 
           sed -i "s|__SUPABASE_URL__|${SUPABASE_URL}|g" dist/script.js

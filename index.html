@@ -3,140 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mika Kagami | Web & Design</title>
+  <meta name="description" content="Mika portfolio: дизайн домов, 3D комнат и визуальных работ." />
+  <title>Mika | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-glow"></div>
-  <main class="shell">
-    <header class="navbar">
-      <a class="logo" href="#">みか かがみ</a>
+  <div class="star-field" aria-hidden="true"></div>
+  <div class="shooting-stars" aria-hidden="true"></div>
+  <div class="cosmic-bg" aria-hidden="true"></div>
+  <div class="noise-layer" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="nav-logo" href="#home" aria-label="Mika на главную">
+        <span class="nav-logo__spark" aria-hidden="true"></span>
+        <span>MIKA</span>
+        <i aria-hidden="true"></i>
+      </a>
+
       <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="nav-links">
-        <a href="#services">Услуги</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#about">Обо мне</a>
-        <a href="#steps">Этапы</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#contact" class="nav-button">Связаться</a>
-      </nav>
-    </header>
 
-    <section class="hero" id="about" data-profile="Mika Kagami" data-profile-note="design / code / launch">
-      <div class="hero-copy">
-        <p class="eyebrow">Веб-решения под ключ</p>
-        <h1>Создаю сайты, которые <span>работают</span> на ваш успех</h1>
-        <p class="hero-text">Современный дизайн, продуманная структура и индивидуальный подход к каждому проекту.</p>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#home" class="is-active"><span aria-hidden="true">⌂</span>Главная</a>
+        <a href="#about"><span aria-hidden="true">♙</span>Обо мне</a>
+        <a href="#works"><span aria-hidden="true">▱</span>Проекты</a>
+        <a href="#services"><span aria-hidden="true">✧</span>Услуги</a>
+        <a href="#reviews"><span aria-hidden="true">★</span>Отзывы</a>
+        <a href="#contact"><span aria-hidden="true">✉</span>Контакты</a>
+      </nav>
+
+      <div class="nav-socials" aria-label="Социальные ссылки">
+        <a href="https://t.me/MikaKagami_XIX" aria-label="Telegram">✦</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--reference" id="home">
+      <div class="hero-copy hero-reference-copy">
+        <p class="eyebrow">Hi, I'm</p>
+        <h1>Mika</h1>
+        <h2>Дизайнер домов, 3D комнат и визуальных проектов</h2>
+        <p class="hero-description">
+          Создаю атмосферные пространства и аккуратные digital-работы: от интерьеров и домов
+          до визуальных идей для публикаций. Каждый проект оформляю так, чтобы он выглядел чисто,
+          дорого и запоминался с первого взгляда.
+        </p>
         <div class="hero-actions">
-          <a class="button primary" href="#contact">Обсудить проект</a>
-          <a class="button ghost" href="#portfolio">Смотреть работы</a>
+          <a class="button primary" href="#works">Смотреть работы</a>
+          <a class="button ghost" href="#contact">Связаться</a>
         </div>
       </div>
-      <div class="hero-art" data-profile="Mika Kagami" data-profile-note="design / code / launch" aria-hidden="true">
-        <div class="profile-card">
-          <div class="profile-aura"></div>
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="profile-spark spark-one"></div>
-          <div class="profile-spark spark-two"></div>
-          <div class="profile-spark spark-three"></div>
-          <div class="avatar">
-            <img src="assets/photo_2026-03-15_17-22-30.jpg" alt="" />
-          </div>
-          <div class="profile-badge">WEB</div>
-        </div>
+    </section>
+
+    <section class="section intro-strip" id="about" aria-label="Обо мне">
+      <article>
+        <span>01</span>
+        <strong>3D дома</strong>
+        <p>Визуальная подача идей, планировки и настроения будущего пространства.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <strong>3D комнаты</strong>
+        <p>Комнаты, кухни и интерьерные сцены для портфолио, презентации или клиента.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <strong>Другое</strong>
+        <p>Обложки, шаблоны, сайты и аккуратный визуал для красивой публикации работ.</p>
+      </article>
+    </section>
+
+    <section class="section works" id="works">
+      <div class="section-heading">
+        <p class="eyebrow">gallery</p>
+        <h2>Галереи работ</h2>
+        <p>Выберите направление, чтобы перейти в нужную галерею.</p>
+      </div>
+
+      <div class="work-grid work-grid--tiles">
+        <a class="work-card work-tile" href="portfolio-3d-room-design.html">
+          <span>01</span>
+          <h3>3D комнаты</h3>
+          <p>Интерьерные сцены, комнаты, кухни и визуализации пространства.</p>
+        </a>
+
+        <a class="work-card work-tile" href="portfolio-house-design.html">
+          <span>02</span>
+          <h3>3D дома</h3>
+          <p>Идеи домов, планировок и общей атмосферы будущего пространства.</p>
+        </a>
+
+        <a class="work-card work-tile" href="portfolio-ad-templates.html">
+          <span>03</span>
+          <h3>Другое</h3>
+          <p>Шаблоны, визуальные материалы, сайты и дополнительные работы.</p>
+        </a>
       </div>
     </section>
 
     <section class="section services" id="services">
-      <h2>Мои услуги</h2>
+      <div class="section-heading">
+        <p class="eyebrow">services</p>
+        <h2>Что можно заказать</h2>
+      </div>
+
       <div class="service-grid">
-        <article class="card service-card">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <rect x="4" y="5" width="16" height="12" rx="2"></rect>
-              <path d="M8 21h8"></path>
-              <path d="M12 17v4"></path>
-              <path d="m8 10 2 2-2 2"></path>
-              <path d="M13 14h3"></path>
-            </svg>
-          </span>
-          <h3>Создание веб-сайтов</h3>
-          <p>Под любой стиль, цели и пожелания клиента.</p>
-          <strong>20–30 €</strong>
+        <article class="service-card">
+          <span>rooms</span>
+          <h3>3D комнаты</h3>
+          <p>Атмосферная визуализация интерьера для публикации, презентации или личного проекта.</p>
+          <strong>по договоренности</strong>
         </article>
-        <article class="card service-card">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"></path>
-              <path d="M12 12 4.5 7.7"></path>
-              <path d="M12 12v8.5"></path>
-              <path d="m12 12 7.5-4.3"></path>
-            </svg>
-          </span>
-          <h3>3D дизайн комнаты</h3>
-          <p>Визуализация интерьера вашей мечты.</p>
-          <strong>10–15 €</strong>
+        <article class="service-card">
+          <span>homes</span>
+          <h3>3D дома</h3>
+          <p>Визуальное оформление идеи дома, комнаты или отдельной зоны в красивой подаче.</p>
+          <strong>по договоренности</strong>
         </article>
-        <article class="card service-card">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <rect x="4" y="5" width="16" height="14" rx="2"></rect>
-              <path d="M8 9h8"></path>
-              <path d="M8 13h5"></path>
-              <path d="M15 15.5 17 14l2 1.5"></path>
-            </svg>
-          </span>
-          <h3>Рекламные шаблоны</h3>
-          <p>Баннеры, посты, обложки, сторис и многое другое.</p>
-          <strong>5–10 €</strong>
+        <article class="service-card">
+          <span>other</span>
+          <h3>Другое</h3>
+          <p>Дополнительные визуальные работы: шаблоны, обложки, сайты и оформление публикаций.</p>
+          <strong>по договоренности</strong>
         </article>
-      </div>
-
-      <div class="benefits">
-        <div><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m13 2-8 12h6l-1 8 8-12h-6l1-8Z"></path></svg></span><p><b>Быстро</b><small>Оптимизация сроков</small></p></div>
-        <div><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.2 7 10 4-1.8 7-5.5 7-10V6l-7-3Z"></path><path d="m9.5 12 1.7 1.7 3.8-4"></path></svg></span><p><b>Надежно</b><small>Безопасность и стабильность</small></p></div>
-        <div><span aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path><path d="M8 11h6"></path></svg></span><p><b>SEO</b><small>Готовность к продвижению</small></p></div>
-        <div><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0"></path><path d="M5 12v3a2 2 0 0 0 2 2h1v-6H7a2 2 0 0 0-2 1Z"></path><path d="M19 12v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 1Z"></path><path d="M13 19h2a4 4 0 0 0 4-4"></path></svg></span><p><b>Поддержка</b><small>На связи после завершения</small></p></div>
-      </div>
-    </section>
-
-    <section class="section portfolio" id="portfolio">
-      <div class="section-head">
-        <h2>Портфолио</h2>
-        <a href="#contact">Смотреть все работы →</a>
-      </div>
-      <div class="portfolio-grid">
-        <a class="work work-1" href="portfolio-websites.html"><h3>Веб-сайты</h3><p>Library</p></a>
-        <a class="work work-2" href="portfolio-ad-templates.html"><h3>Рекламные шаблоны</h3><p>Library</p></a>
-        <a class="work work-3" href="portfolio-3d-room-design.html"><h3>3D Room Design</h3><p>Gallery</p></a>
-        <a class="work work-4" href="portfolio-house-design.html"><h3>Дизайн домов</h3><p>Library</p></a>
-      </div>
-    </section>
-
-    <section class="section steps" id="steps">
-      <h2>Как я работаю</h2>
-      <div class="steps-line">
-        <div><span>01</span><b>Обсуждение</b><small>Понимаю ваши цели и задачи</small></div>
-        <div><span>02</span><b>Планирование</b><small>Составляю план и структуру</small></div>
-        <div><span>03</span><b>Разработка</b><small>Создаю дизайн и верстку</small></div>
-        <div><span>04</span><b>Тестирование</b><small>Проверяю качество и адаптивность</small></div>
-        <div><span>05</span><b>Запуск</b><small>Публикую сайт</small></div>
       </div>
     </section>
 
     <section class="section reviews" id="reviews">
-      <div class="section-head">
-        <h2>Отзывы клиентов</h2>
-        <a href="#review-form">Оставить отзыв →</a>
+      <div class="section-heading">
+        <p class="eyebrow">guestbook</p>
+        <h2>Отзывы</h2>
+        <p>Можно оставить короткий отзыв о работе, стиле или проекте.</p>
       </div>
-      <div class="reviews-grid is-empty" id="reviews-list">
-        <p class="reviews-empty">Отзывы появятся здесь после подключения базы данных.</p>
-      </div>
+
+      <div class="reviews-grid" id="reviews-list" aria-live="polite"></div>
 
       <form class="review-form" id="review-form">
         <h3>Оставьте свой отзыв</h3>
@@ -153,21 +161,11 @@
             <legend>Оценка</legend>
             <input type="hidden" name="rating" value="5" />
             <div class="rating-stars" role="radiogroup" aria-label="Оценка">
-              <button class="rating-star is-active" type="button" data-rating="1" aria-label="1 звезда" aria-checked="false" role="radio">
-                <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"></path></svg>
-              </button>
-              <button class="rating-star is-active" type="button" data-rating="2" aria-label="2 звезды" aria-checked="false" role="radio">
-                <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"></path></svg>
-              </button>
-              <button class="rating-star is-active" type="button" data-rating="3" aria-label="3 звезды" aria-checked="false" role="radio">
-                <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"></path></svg>
-              </button>
-              <button class="rating-star is-active" type="button" data-rating="4" aria-label="4 звезды" aria-checked="false" role="radio">
-                <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"></path></svg>
-              </button>
-              <button class="rating-star is-active" type="button" data-rating="5" aria-label="5 звезд" aria-checked="true" role="radio">
-                <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"></path></svg>
-              </button>
+              <button class="rating-star is-active" type="button" data-rating="1" aria-label="1 звезда" aria-checked="false" role="radio">★</button>
+              <button class="rating-star is-active" type="button" data-rating="2" aria-label="2 звезды" aria-checked="false" role="radio">★</button>
+              <button class="rating-star is-active" type="button" data-rating="3" aria-label="3 звезды" aria-checked="false" role="radio">★</button>
+              <button class="rating-star is-active" type="button" data-rating="4" aria-label="4 звезды" aria-checked="false" role="radio">★</button>
+              <button class="rating-star is-active" type="button" data-rating="5" aria-label="5 звезд" aria-checked="true" role="radio">★</button>
             </div>
           </fieldset>
           <label class="review-message">
@@ -177,25 +175,20 @@
         </div>
         <div class="review-submit-row">
           <button class="button primary" type="submit">Отправить отзыв</button>
-          <p class="review-status" id="review-status" aria-live="polite"></p>
+          <p class="review-status" id="review-status"></p>
         </div>
       </form>
     </section>
 
     <section class="contact" id="contact">
-      <h2>Готовы начать проект?</h2>
-      <p>Напишите мне, и мы обсудим ваш будущий сайт.</p>
-      <div class="contact-buttons">
-        <a class="button primary" href="https://t.me/MikaKagami_XIX">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-4.8 16-4.6-6-5.8-2.1L21 4Z"></path><path d="m11.6 14 3.8-3.7"></path></svg>
-          @MikaKagami_XIX
-        </a>
-        <a class="button dark" href="https://wa.me/380688886608?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5&utm_source=chatgpt.com">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 18.8 6.4 15A7.6 7.6 0 1 1 9 17.6l-3.8 1.2Z"></path><path d="M9.3 8.5c.2 3.1 2.1 5 5.2 5.2l1.1-1.5c.2-.3.2-.7-.1-.9l-1.2-.8c-.3-.2-.7-.2-.9.1l-.5.7c-.9-.4-1.5-1-1.9-1.9l.7-.5c.3-.2.3-.6.1-.9L11 6.8c-.2-.3-.6-.3-.9-.1L8.6 7.8c.2.2.6.5.7.7Z"></path></svg>
-          WhatsApp
-        </a>
+      <div>
+        <p class="eyebrow">contact</p>
+        <h2>Хотите оформить новую работу?</h2>
+        <p>Напишите Mika, чтобы обсудить стиль, детали и формат будущего проекта.</p>
       </div>
-      <footer>♡ Ваш проект — мой приоритет ♡</footer>
+      <div class="contact-actions">
+        <a class="button primary" href="https://t.me/MikaKagami_XIX">Telegram</a>
+      </div>
     </section>
   </main>
 

@@ -1,8 +1,8 @@
 {
-  "name": "mika-kagami-site",
+  "name": "mika-portfolio-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Portfolio landing page for Mika Kagami",
+  "description": "Cosmic portfolio site for publishing Mika Kagami works",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
