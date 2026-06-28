@@ -369,7 +369,7 @@ main {
   background:
     linear-gradient(90deg, rgba(2, 0, 8, 0.56), rgba(2, 0, 8, 0.12) 47%, rgba(2, 0, 8, 0.48)),
     linear-gradient(180deg, rgba(2, 0, 8, 0.04), rgba(8, 0, 22, 0.28) 68%, #03000a 100%),
-    url("/assets/mika-cosmic-bg.png") center top / cover no-repeat;
+    url("../assets/mika-cosmic-bg.png") center top / cover no-repeat;
   filter: saturate(1.14) contrast(1.08) brightness(0.86);
 }
 
@@ -946,7 +946,7 @@ main {
     background:
       linear-gradient(180deg, rgba(2, 0, 8, 0.24), rgba(7, 0, 22, 0.76) 70%, #03000a 100%),
       linear-gradient(90deg, rgba(2, 0, 8, 0.7), rgba(2, 0, 8, 0.24)),
-      url("/assets/mika-cosmic-bg.png") 58% top / cover no-repeat;
+      url("../assets/mika-cosmic-bg.png") 58% top / cover no-repeat;
   }
 
   .hero-copy {
