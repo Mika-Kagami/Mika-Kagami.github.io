@@ -1,197 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mika portfolio: дизайн домов, 3D комнат и визуальных работ." />
-  <title>Mika | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="star-field" aria-hidden="true"></div>
-  <div class="shooting-stars" aria-hidden="true"></div>
-  <div class="cosmic-bg" aria-hidden="true"></div>
-  <div class="noise-layer" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <div class="nav-shell">
-      <a class="nav-logo" href="#home" aria-label="Mika на главную">
-        <span class="nav-logo__spark" aria-hidden="true"></span>
-        <span>MIKA</span>
-        <i aria-hidden="true"></i>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <a href="#home" class="is-active"><span aria-hidden="true">⌂</span>Главная</a>
-        <a href="#about"><span aria-hidden="true">♙</span>Обо мне</a>
-        <a href="#works"><span aria-hidden="true">▱</span>Проекты</a>
-        <a href="#services"><span aria-hidden="true">✧</span>Услуги</a>
-        <a href="#reviews"><span aria-hidden="true">★</span>Отзывы</a>
-        <a href="#contact"><span aria-hidden="true">✉</span>Контакты</a>
-      </nav>
-
-      <div class="nav-socials" aria-label="Социальные ссылки">
-        <a href="https://t.me/MikaKagami_XIX" aria-label="Telegram">✦</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero hero--reference" id="home">
-      <div class="hero-copy hero-reference-copy">
-        <p class="eyebrow">Hi, I'm</p>
-        <h1>Mika</h1>
-        <h2>Дизайнер домов, 3D комнат и визуальных проектов</h2>
-        <p class="hero-description">
-          Создаю атмосферные пространства и аккуратные digital-работы: от интерьеров и домов
-          до визуальных идей для публикаций. Каждый проект оформляю так, чтобы он выглядел чисто,
-          дорого и запоминался с первого взгляда.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#works">Смотреть работы</a>
-          <a class="button ghost" href="#contact">Связаться</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section intro-strip" id="about" aria-label="Обо мне">
-      <article>
-        <span>01</span>
-        <strong>3D дома</strong>
-        <p>Визуальная подача идей, планировки и настроения будущего пространства.</p>
-      </article>
-      <article>
-        <span>02</span>
-        <strong>3D комнаты</strong>
-        <p>Комнаты, кухни и интерьерные сцены для портфолио, презентации или клиента.</p>
-      </article>
-      <article>
-        <span>03</span>
-        <strong>Другое</strong>
-        <p>Обложки, шаблоны, сайты и аккуратный визуал для красивой публикации работ.</p>
-      </article>
-    </section>
-
-    <section class="section works" id="works">
-      <div class="section-heading">
-        <p class="eyebrow">gallery</p>
-        <h2>Галереи работ</h2>
-        <p>Выберите направление, чтобы перейти в нужную галерею.</p>
-      </div>
-
-      <div class="work-grid work-grid--tiles">
-        <a class="work-card work-tile" href="portfolio-3d-room-design.html">
-          <span>01</span>
-          <h3>3D комнаты</h3>
-          <p>Интерьерные сцены, комнаты, кухни и визуализации пространства.</p>
-        </a>
-
-        <a class="work-card work-tile" href="portfolio-house-design.html">
-          <span>02</span>
-          <h3>3D дома</h3>
-          <p>Идеи домов, планировок и общей атмосферы будущего пространства.</p>
-        </a>
-
-        <a class="work-card work-tile" href="portfolio-ad-templates.html">
-          <span>03</span>
-          <h3>Другое</h3>
-          <p>Шаблоны, визуальные материалы, сайты и дополнительные работы.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="section-heading">
-        <p class="eyebrow">services</p>
-        <h2>Что можно заказать</h2>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <span>rooms</span>
-          <h3>3D комнаты</h3>
-          <p>Атмосферная визуализация интерьера для публикации, презентации или личного проекта.</p>
-          <strong>по договоренности</strong>
-        </article>
-        <article class="service-card">
-          <span>homes</span>
-          <h3>3D дома</h3>
-          <p>Визуальное оформление идеи дома, комнаты или отдельной зоны в красивой подаче.</p>
-          <strong>по договоренности</strong>
-        </article>
-        <article class="service-card">
-          <span>other</span>
-          <h3>Другое</h3>
-          <p>Дополнительные визуальные работы: шаблоны, обложки, сайты и оформление публикаций.</p>
-          <strong>по договоренности</strong>
-        </article>
-      </div>
-    </section>
-
-    <section class="section reviews" id="reviews">
-      <div class="section-heading">
-        <p class="eyebrow">guestbook</p>
-        <h2>Отзывы</h2>
-        <p>Можно оставить короткий отзыв о работе, стиле или проекте.</p>
-      </div>
-
-      <div class="reviews-grid" id="reviews-list" aria-live="polite"></div>
-
-      <form class="review-form" id="review-form">
-        <h3>Оставьте свой отзыв</h3>
-        <div class="review-fields">
-          <label>
-            <span>Имя</span>
-            <input type="text" name="name" maxlength="40" autocomplete="name" required />
-          </label>
-          <label>
-            <span>Проект или роль</span>
-            <input type="text" name="role" maxlength="60" placeholder="Например: владелец магазина" required />
-          </label>
-          <fieldset class="rating-field">
-            <legend>Оценка</legend>
-            <input type="hidden" name="rating" value="5" />
-            <div class="rating-stars" role="radiogroup" aria-label="Оценка">
-              <button class="rating-star is-active" type="button" data-rating="1" aria-label="1 звезда" aria-checked="false" role="radio">★</button>
-              <button class="rating-star is-active" type="button" data-rating="2" aria-label="2 звезды" aria-checked="false" role="radio">★</button>
-              <button class="rating-star is-active" type="button" data-rating="3" aria-label="3 звезды" aria-checked="false" role="radio">★</button>
-              <button class="rating-star is-active" type="button" data-rating="4" aria-label="4 звезды" aria-checked="false" role="radio">★</button>
-              <button class="rating-star is-active" type="button" data-rating="5" aria-label="5 звезд" aria-checked="true" role="radio">★</button>
-            </div>
-          </fieldset>
-          <label class="review-message">
-            <span>Отзыв</span>
-            <textarea name="message" rows="4" maxlength="360" required></textarea>
-          </label>
-        </div>
-        <div class="review-submit-row">
-          <button class="button primary" type="submit">Отправить отзыв</button>
-          <p class="review-status" id="review-status"></p>
-        </div>
-      </form>
-    </section>
-
-    <section class="contact" id="contact">
-      <div>
-        <p class="eyebrow">contact</p>
-        <h2>Хотите оформить новую работу?</h2>
-        <p>Напишите Mika, чтобы обсудить стиль, детали и формат будущего проекта.</p>
-      </div>
-      <div class="contact-actions">
-        <a class="button primary" href="https://t.me/MikaKagami_XIX">Telegram</a>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mika portfolio: дизайн домов, 3D комнат и визуальных проектов."
+    />
+    <title>Mika | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
